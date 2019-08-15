@@ -17,11 +17,11 @@ public class ClassePrincipal {
         Pessoa pessoa2 = new Pessoa();
          
          
-        pessoa1.setNome("Yuri");
+        pessoa1.setNome("Mateus");
         pessoa1.setSaldo(1000);
         pessoa1.setDebito(0);
          
-        pessoa2.setNome("Cris");
+        pessoa2.setNome("Carlos");
         pessoa2.setSaldo(1000);
         pessoa2.setDebito(200);
          
