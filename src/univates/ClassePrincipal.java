@@ -15,40 +15,42 @@ public class ClassePrincipal {
 
         Pessoa pessoa1 = new Pessoa();
         Pessoa pessoa2 = new Pessoa();
-
+        
         pessoa1.setCodigo(1);
         pessoa1.setNome("Juca");
         pessoa1.setEndereco("Lajeado");
         pessoa1.setTelefone("190");
         pessoa1.setValorConta(500);
-
+        pessoa1.setChequeEspecial(200);
+        
         pessoa2.setCodigo(2);
         pessoa2.setNome("João");
         pessoa2.setValorConta(1000);
-
+        pessoa1.setChequeEspecial(100);
+        
         System.out.println("Saldo Inicial:");
         System.out.println(pessoa1);
         System.out.println("-------------------");
         System.out.println(pessoa2);
         System.out.println("-------------------");
-
-        double valorTransferencia = 100;
+        
+        double valorTransferencia = 600;
         System.out.println("Valor da Transferência: R$ " + valorTransferencia);
-
-        if (pessoa1.credito(valorTransferencia) == true) {
+        
+        if(pessoa1.credito(valorTransferencia) == true){
             pessoa2.debito(valorTransferencia);
         }
-
+        
         System.out.println("Saldo Final:");
         System.out.println(pessoa1);
         System.out.println("-------------------");
         System.out.println(pessoa2);
         System.out.println("-------------------");
-
-        valorTransferencia = 85.50;
+        
+        valorTransferencia = 100;
         System.out.println("Valor da Transferência: R$ " + valorTransferencia);
-        if (pessoa2.credito(valorTransferencia) == true) {
-            pessoa1.debito(valorTransferencia);
+        if(pessoa1.credito(valorTransferencia) == true){
+            pessoa2.debito(valorTransferencia);
         }
         System.out.println("Saldo Final:");
         System.out.println(pessoa1);
