@@ -20,16 +20,19 @@ public class ClassePrincipal {
         pessoa1.setNome("Mateus");
         pessoa1.setSaldo(1000);
         pessoa1.setDebito(0);
+        pessoa1.setConta(1);
          
         pessoa2.setNome("Carlos");
         pessoa2.setSaldo(1000);
         pessoa2.setDebito(200);
+        pessoa2.setConta(2);
+        
          
         if(pessoa1.getDebito() > 0 && pessoa2.getDebito() > 0){
             System.out.println("\n\n\t\t\tVOCÊ ESTÁ TENTANDO TRANSFERIR PARA DUAS CONTAS AO MESMO TEMPO\n\n");
         } else {
             if(pessoa2.getSaldo() >= pessoa2.getDebito() && pessoa2.getDebito() > 0){
-              //depositando para o Yuri
+              //depositando para o Mateus
               pessoa1.setSaldo(pessoa1.getSaldo() + pessoa2.getDebito());//DEPOSITANDO
               pessoa1.setRecebeu(pessoa2.getDebito());//DIZENDO QUANDO RECEBEU
               pessoa2.setSaldo(pessoa2.getSaldo() - pessoa2.getDebito());//TIRANDO O VALOR DA OUTRA PESSOA

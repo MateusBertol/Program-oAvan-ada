@@ -12,11 +12,19 @@ package univates;
 public class Pessoa {
    
     private String nome;
+    private int conta;
     private double saldo;
     private double debito;
     private double recebeu;
 
     
+    public int getConta() {
+        return conta;
+    }
+
+    public void setConta(int conta) {
+        this.conta = conta;
+    }
     
     public String getNome() {
         return nome;
@@ -52,6 +60,6 @@ public class Pessoa {
     
     
     public String toString(){
-        return "Nome: " + this.nome + "\nSaldo: " + this.saldo + "\nDepositou: " + this.debito + "\nRecebeu: " + this.recebeu + "\n-------------------";
+        return "Nome: " + this.nome +"\nConta: " + this.conta + "\nSaldo: " + this.saldo + "\nDepositou: " + this.debito + "\nRecebeu: " + this.recebeu + "\n-------------------";
     }
 }
