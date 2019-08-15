@@ -7,7 +7,7 @@ package univates;
 
 /**
  *
- * @author yuri.schmitz
+ * @author mateus.bertol
  */
 public class Funcoes {
     
