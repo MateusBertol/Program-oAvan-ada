@@ -15,45 +15,55 @@ public class ClassePrincipal {
 
         Pessoa pessoa1 = new Pessoa();
         Pessoa pessoa2 = new Pessoa();
-         
-         
-        pessoa1.setNome("Mateus");
-        pessoa1.setSaldo(1000);
-        pessoa1.setDebito(0);
-        pessoa1.setConta(1);
-         
-        pessoa2.setNome("Carlos");
-        pessoa2.setSaldo(1000);
-        pessoa2.setDebito(200);
-        pessoa2.setConta(2);
-        
-         
-        if(pessoa1.getDebito() > 0 && pessoa2.getDebito() > 0){
-            System.out.println("\n\n\t\t\tVOCÊ ESTÁ TENTANDO TRANSFERIR PARA DUAS CONTAS AO MESMO TEMPO\n\n");
-        } else {
-            if(pessoa2.getSaldo() >= pessoa2.getDebito() && pessoa2.getDebito() > 0){
-              //depositando para o Mateus
-              pessoa1.setSaldo(pessoa1.getSaldo() + pessoa2.getDebito());//DEPOSITANDO
-              pessoa1.setRecebeu(pessoa2.getDebito());//DIZENDO QUANDO RECEBEU
-              pessoa2.setSaldo(pessoa2.getSaldo() - pessoa2.getDebito());//TIRANDO O VALOR DA OUTRA PESSOA
-              System.out.println(pessoa1);
-              System.out.println(pessoa2);
-           } else if(pessoa2.getDebito() > pessoa2.getSaldo()){
-               System.out.println("\n\nVALOR MUITO ALTO\n\n");
-           }
 
-           if(pessoa1.getSaldo() >= pessoa1.getDebito()&& pessoa1.getDebito() > 0){
-              //DEPOSITANDO PARA A CRIS
-              pessoa2.setSaldo(pessoa2.getSaldo() + pessoa1.getDebito());//DEPOSITANDO
-              pessoa2.setRecebeu(pessoa1.getDebito());//DIZENDO QUANDO RECEBEU
-              pessoa1.setSaldo(pessoa1.getSaldo() - pessoa1.getDebito());//TIRANDO O VALOR DA OUTRA PESSOA
-              System.out.println(pessoa1);
-              System.out.println(pessoa2);
-           } else if(pessoa1.getDebito() > pessoa1.getSaldo()){
-               System.out.println("\n\nVALOR MUITO ALTO\n\n");
-           }
+        pessoa1.setCodigo(1);
+        pessoa1.setNome("Juca");
+        pessoa1.setEndereco("Lajeado");
+        pessoa1.setTelefone("190");
+        pessoa1.setValorConta(500);
+
+        pessoa2.setCodigo(2);
+        pessoa2.setNome("João");
+        pessoa2.setValorConta(1000);
+
+        System.out.println("Saldo Inicial:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+
+        double valorTransferencia = 100;
+        System.out.println("Valor da Transferência: R$ " + valorTransferencia);
+
+        if (pessoa1.credito(valorTransferencia) == true) {
+            pessoa2.debito(valorTransferencia);
         }
-        
+
+        System.out.println("Saldo Final:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+
+        valorTransferencia = 85.50;
+        System.out.println("Valor da Transferência: R$ " + valorTransferencia);
+        if (pessoa2.credito(valorTransferencia) == true) {
+            pessoa1.debito(valorTransferencia);
+        }
+        System.out.println("Saldo Final:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+
+        /* Definir um valorConta para cada pessoa.
+           Criar um método dentro da classe Pessoa que diminui e um que aumenta
+           o valor da conta.
+        Ex: Transferir parte do valor de uma conta para a outra
+        Ao final, imprimir o saldo das duas pessoas
+        PLUS: Validar se a pessoa tem saldo para essa transferencia
+         */
+       
         /*
             soma(2, 3);//imprima o resultado na tela
             subtrai(3, 3);//mesma coisa
